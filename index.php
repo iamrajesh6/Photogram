@@ -1,40 +1,73 @@
-<html>
 <?php
-$table=$_GET['table'];
-$rows=100;
+include 'libs/load.php';
 ?>
 
+<!doctype html>
+<html lang="en">
+
 <head>
-	<title>sample</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Rajesh D">
+	<meta name="generator" content="Hugo 0.84.0">
+	<title>Photogram</title>
+
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+	<!-- Bootstrap core CSS -->
+	<link href="/photogram/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+		}
+
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+	</style>
 </head>
 
 <body>
-	<table>
-		<tr>
-			<th>Multiplicant</th>
-			<th></th>
-			<th>Multiplier</th>
-			<th>Value</th>
-		</tr>
-		<?php
-for ($i=0;$i<=$rows;$i++) {
-    ?>
-		<tr>
-			<td>
-				<?=$i?>
-			</td>
-			<td>x</td>
-			<td>
-				<?=$table?>
-			</td>
-			<td>
-				<?=$table*$i?>
-			</td>
-		</tr>
-		<?php
-}
-?>
-	</table>
+	<header>
+		<div class="collapse bg-dark" id="navbarHeader">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 col-md-7 py-4">
+						<h4 class="text-white">About</h4>
+						<p class="text-muted">Add some information about the album below, the author, or any other
+							background context. Make it a few sentences long so folks can pick up some informative
+							tidbits. Then, link them off to some social networking sites or contact information.</p>
+					</div>
+					<div class="col-sm-4 offset-md-1 py-4">
+						<h4 class="text-white">Contact</h4>
+						<ul class="list-unstyled">
+							<li><a href="#" class="text-white">Follow on Twitter</a></li>
+							<li><a href="#" class="text-white">Like on Facebook</a></li>
+							<li><a href="#" class="text-white">Email me</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?load_template('_header');?>
+	</header>
+
+	<main>
+		<?load_template('_calltoaction');?>
+		<?load_template('_photogram');?>
+	</main>
+
+	<?load_template('_footer');?>
+
+	<script src="/photogram/assets/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
