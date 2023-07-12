@@ -70,4 +70,10 @@ include 'libs/load.php';
 
 </body>
 
+<pre>
+<?php
+print_r($_SERVER);
+?>
+</pre>
+
 </html>
