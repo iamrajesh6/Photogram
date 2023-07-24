@@ -7,10 +7,10 @@ class database
     public static function getconnection()
     {
         if(database::$conn == null) {
-            $servername = "mysql.selfmade.ninja";
-            $username = "iamrajesh";
-            $password = "@Luxhamam666";
-            $dbname = "iamrajesh_new";
+            $servername = get_config('db_server');
+            $username = get_config('db_username');
+            $password = get_config('db_password');
+            $dbname = get_config('db_name');
 
 
             // Create connection

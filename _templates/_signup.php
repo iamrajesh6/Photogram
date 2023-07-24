@@ -57,7 +57,8 @@ if($signup) {
 			<label for="floatingInput">Email address</label>
 		</div>
 		<div class="form-floating">
-			<input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password">
+			<input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password"
+				required>
 			<label for="floatingPassword">Password</label>
 		</div>
 
