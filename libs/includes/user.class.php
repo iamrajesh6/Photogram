@@ -5,8 +5,8 @@ require_once "database.class.php";
 class user
 {
     private $conn;
-    private $username;
-    private $id;
+    public $username;
+    public $id;
 
     public function __call($name, $arguments)
     {
@@ -18,6 +18,8 @@ class user
             return $this->_get_data($property);
         } elseif(substr($name, 0, 3) == "set") {
             return $this->_set_data($property, $arguments[0]);
+        } else {
+            throw new Exception("user::__call()-> $name, Function Unavailable.");
         }
     }
 
@@ -64,7 +66,7 @@ class user
         $this->conn = database::getconnection();
         $this->username = $username;
         $this->id = null;
-        $sql = "SELECT `id` FROM `auth` WHERE `username` = '$username' LIMIT 1";
+        $sql = "SELECT `id` FROM `auth` WHERE `username` = '$username' OR 'id' = '$username' LIMIT 1";
         $result = $this->conn->query($sql);
         if($result->num_rows) {
             $row = $result->fetch_assoc();

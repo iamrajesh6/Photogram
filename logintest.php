@@ -8,7 +8,7 @@ $result = null;
 
 if (isset($_GET['logout'])) {
     Session::destroy();
-    exit("Session destroyed, <a href='logintest.php'>Login Again</a>");
+    die("Session destroyed, <a href='logintest.php'>Login Again</a>");
 }
 
 if(session::get('is_loggedin')) {
@@ -29,3 +29,8 @@ if(session::get('is_loggedin')) {
         echo"Login failed, $user <br>";
     }
 }
+
+echo <<<EOL
+<br><br><a href="logintest.php?logout">Logout</a>
+EOL;
+print_r($_SERVER);
