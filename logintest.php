@@ -11,6 +11,10 @@ if (isset($_GET['logout'])) {
     die("Session destroyed, <a href='logintest.php'>Login Again</a>");
 }
 
+
+
+
+
 if(session::get('is_loggedin')) {
     $username = session::get('session_username');
     $userobj = new user($username);
@@ -33,4 +37,3 @@ if(session::get('is_loggedin')) {
 echo <<<EOL
 <br><br><a href="logintest.php?logout">Logout</a>
 EOL;
-print_r($_SERVER);
