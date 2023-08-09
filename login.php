@@ -17,7 +17,7 @@ $password= $_POST['pass'];
 
 
 
-	<script src="/photogram/assets/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

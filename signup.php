@@ -11,7 +11,7 @@ include 'libs/load.php';
 	<?load_template('_header');?>
 	<?load_template('_signup');?>
 
-	<script src="/photogram/assets/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

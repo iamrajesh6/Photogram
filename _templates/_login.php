@@ -10,7 +10,7 @@ if($result) {
 	<div class="bg-light p-5 rounded mt-3">
 		<h1>Login Succesfull!!!</h1>
 		<p class="lead">Welcome Gentleman</p>
-		<a class="btn btn-lg btn-primary" href="/photogram/login.php" role="button">Return to Login</a>
+		<a class="btn btn-lg btn-primary" href="<?get_config('base_path')?>login.php" role="button">Return to Login</a>
 	</div>
 </main>
 <?php

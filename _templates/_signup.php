@@ -26,7 +26,8 @@ if($signup) {
 	<div class="bg-light p-5 rounded mt-3">
 		<h1>Sign up!!!</h1>
 		<p class="lead">Sign up Failed<?=$error?></p>
-		<a class="btn btn-lg btn-primary" href="/photogram/signup.php" role="button">Return to Signup</a>
+		<a class="btn btn-lg btn-primary" href="<?get_config('base_path')?>signup.php" role="button">Return to
+			Signup</a>
 	</div>
 </main>
 <?php

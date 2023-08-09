@@ -1,4 +1,4 @@
-<footer class="text-muted py-5">
+<footer class="text-body-secondary py-5">
 	<div class="container">
 		<p class="float-end mb-1">
 			<a href="#">Back to top</a>
@@ -8,3 +8,10 @@
 				href="../getting-started/introduction/">getting started guide</a>.</p>
 	</div>
 </footer>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+<link
+	href="<?=get_config('base_path')?>assets/dist/css/bootstrap.min.css"
+	rel="stylesheet">
