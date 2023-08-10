@@ -13,7 +13,6 @@ class database
             $password = get_config('db_password');
             $dbname = get_config('db_name');
 
-
             // Create connection
             $connection = new mysqli($servername, $username, $password, $dbname);
             // Check connection

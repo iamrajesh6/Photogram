@@ -35,14 +35,26 @@ class user
         VALUES ('$user', '$phone', '$email', '$pass', '0', '1')";
         $error=false;
 
-        if ($conn->query($sql) === true) {
-            $error=false;
-        } else {
-            $error=$conn->error;
+
+        // if ($conn->query($sql) === true) {
+        //     $error=false;
+        // } else {
+        //     $error=$conn->error;
+        // }
+        //PHP 8.0 try catch
+
+        try {
+
+            $conn->query($sql) ;
+        }
+        catch(Exception $e){
+
+            return $error=$conn->error;
+
         }
 
-        // $conn->close();
-        return $error;
+        // // $conn->close();
+        // return $error;
     }
     public static function login($user, $pass)
     {

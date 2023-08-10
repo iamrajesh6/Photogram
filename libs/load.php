@@ -11,6 +11,7 @@ global $__site_config;
 // $__site_config = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/../photogramconfig.json');
 
 $__site_config_path = dirname(is_link($_SERVER['DOCUMENT_ROOT']) ? readlink($_SERVER['DOCUMENT_ROOT']) : $_SERVER['DOCUMENT_ROOT']).'/photogramconfig.json';
+
 $__site_config = file_get_contents($__site_config_path);
 
 session::start();
@@ -25,7 +26,6 @@ function get_config($key, $default=null)
         return $default;
     }
 }
-
 
 function load_template($name)
 {
