@@ -4,19 +4,20 @@ include_once 'includes/session.class.php';
 include_once 'includes/database.class.php';
 include_once 'includes/user.class.php';
 include_once 'includes/usersession.class.php';
-
+include_once 'includes/webapi.class.php';
 global $__site_config;
 // $__site_config_path = dirname(is_link($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'].'/photogramconfig.json' : readlink($_SERVER['DOCUMENT_ROOT'])) ;
 // $__site_config = file_get_contents($_SERVER[$__site_config_path].'/../photogramconfig.json');
 // $__site_config = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/../photogramconfig.json');
 
-$__site_config_path = dirname(is_link($_SERVER['DOCUMENT_ROOT']) ? readlink($_SERVER['DOCUMENT_ROOT']) : $_SERVER['DOCUMENT_ROOT']).'/photogramconfig.json';
+// $__site_config_path = dirname(is_link($_SERVER['DOCUMENT_ROOT']) ? readlink($_SERVER['DOCUMENT_ROOT']) : $_SERVER['DOCUMENT_ROOT']).'/photogramconfig.json';
+// session::start();
+// $__site_config = file_get_contents($__site_config_path);
+$wapi = new webapi();
+$wapi->initiatesession();
 
-$__site_config = file_get_contents($__site_config_path);
 
-session::start();
-
-function get_config($key, $default=null)
+function get_config($key, $default = null)
 {
     global $__site_config;
     $array = json_decode($__site_config, true);
